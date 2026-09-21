@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Roadmaps | CareerPilot AI</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <a class="brand" href="index.html"
+        ><span class="brand-mark">✦</span>CareerPilot<span class="brand-ai">
+          AI</span
+        ></a
+      ><button class="menu-toggle">☰</button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a><a href="about.html">About Us</a
+        ><a href="courses.html">Courses</a
+        ><a class="active" href="roadmaps.html">Roadmaps</a
+        ><a href="resume.html">Resume Builder</a
+        ><a href="interviews.html">Mock Interviews</a
+        ><a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="login.html">Log in</a
+        ><a class="btn btn-primary btn-small" href="signup.html">Get Started</a>
+      </div>
+    </header>
+    <main>
+      <section class="page-hero compact">
+        <div class="container">
+          <span class="section-label">CAREER ROADMAPS</span>
+          <h1>Know exactly <span>what to learn next.</span></h1>
+          <p>
+            Choose a target role and follow a structured path from fundamentals
+            to job readiness.
+          </p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="roadmap-selector">
+            <button class="role-chip active" data-role="fullstack">
+              Full Stack Developer</button
+            ><button class="role-chip" data-role="data">Data Analyst</button
+            ><button class="role-chip" data-role="frontend">
+              Frontend Developer</button
+            ><button class="role-chip" data-role="python">
+              Python Developer
+            </button>
+          </div>
+          <div class="roadmap-panel">
+            <div class="roadmap-intro">
+              <div>
+                <span class="section-label">SELECTED PATH</span>
+                <h2 id="roadmapTitle">Full Stack Developer</h2>
+                <p id="roadmapDesc">
+                  A practical path covering frontend, backend, databases and
+                  deployment.
+                </p>
+              </div>
+              <span class="roadmap-progress">0% started</span>
+            </div>
+            <button id="downloadRoadmap" class="btn btn-primary">View Roadmap</button>
+            <div id="roadmapSteps" class="timeline"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand" href="index.html"
+            ><span class="brand-mark">✦</span>CareerPilot<span class="brand-ai">
+              AI</span
+            ></a
+          >
+          <p>
+            Your AI-powered companion for placement preparation and career
+            growth.
+          </p>
+        </div>
+        <div>
+          <h4>Platform</h4>
+          <a href="courses.html">Courses</a><a href="roadmaps.html">Roadmaps</a
+          ><a href="resume.html">Resume Builder</a
+          ><a href="interviews.html">Mock Interviews</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="about.html">About Us</a><a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Account</h4>
+          <a href="login.html">Log in</a><a href="signup.html">Sign up</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© 2026 CareerPilot AI. All rights reserved.</span
+        ><span>Built for students, with AI.</span>
+      </div>
+    </footer>
+    <script src="js/roadmap.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

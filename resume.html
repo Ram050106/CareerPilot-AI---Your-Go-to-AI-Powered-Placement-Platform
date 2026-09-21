@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Builder | CareerPilot AI</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/resume-builder.css" />
+  <link rel="stylesheet" href="css/resume-fixes.css" />
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="index.html"><span class="brand-mark">✦</span>CareerPilot<span class="brand-ai"> AI</span></a>
+    <button class="menu-toggle" type="button">☰</button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a><a href="about.html">About Us</a><a href="courses.html">Courses</a>
+      <a href="roadmaps.html">Roadmaps</a><a class="active" href="resume.html">Resume Builder</a>
+      <a href="interviews.html">Mock Interviews</a><a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions"><a class="btn btn-ghost" href="login.html">Log in</a><a class="btn btn-primary btn-small" href="signup.html">Get Started</a></div>
+  </header>
+
+  <main>
+    <section class="page-hero compact resume-hero">
+      <div class="container">
+        <span class="section-label">CAREERPILOT AI RESUME BUILDER</span>
+        <h1>Create a professional resume <span>your way.</span></h1>
+        <p>Build it yourself with full control or let CareerPilot AI guide you through a simple step-by-step resume creation experience.</p>
+      </div>
+    </section>
+
+    <section class="section resume-builder-section">
+      <div class="container">
+        <div class="resume-mode-card">
+          <div><span class="section-label">CHOOSE YOUR METHOD</span><h2>How do you want to build your resume?</h2><p>Use the manual builder for complete control, or follow our guided AI workflow.</p></div>
+          <div class="mode-buttons">
+            <button class="btn btn-primary mode-btn active" id="manualMode" type="button">✍ Build Manually</button>
+            <button class="btn btn-soft mode-btn" id="aiMode" type="button">✦ Build with AI</button>
+          </div>
+        </div>
+
+        <!-- AI WORKFLOW -->
+        <section class="ai-workflow" id="aiWorkflow" hidden>
+          <div class="workflow-header">
+            <div><span class="section-label">AI RESUME ASSISTANT</span><h2 id="workflowTitle">Choose a template</h2><p id="workflowSubtitle">Start by selecting the design you want CareerPilot AI to use.</p></div>
+            <button class="workflow-close" id="closeAIWorkflow" type="button" aria-label="Close AI workflow">×</button>
+          </div>
+
+          <div class="progress-steps" id="progressSteps"></div>
+
+          <!-- Step 1: Templates -->
+          <div class="ai-step" data-step="1" id="aiStep1">
+            <div class="step-intro"><span class="step-number">01</span><div><h3>Choose your resume template</h3><p>Your information stays the same; only the presentation changes.</p></div></div>
+            <div class="template-choice-grid">
+              <button class="template-choice selected" data-template-choice="ats" type="button"><div class="mini-paper ats-mini"><div class="mini-photo"></div><b>RAM ADDAGATLA</b><small>FULL STACK DEVELOPER</small><hr><strong>SUMMARY</strong><i></i><strong>SKILLS</strong><i></i><strong>PROJECTS</strong><i></i></div><span class="template-choice-title">ATS Professional</span><span class="template-choice-desc">Clean, recruiter-friendly and ATS-focused.</span><span class="template-check">✓</span></button>
+              <button class="template-choice" data-template-choice="modern" type="button"><div class="mini-paper modern-mini"><div class="mini-side"></div><div class="mini-main"><div class="mini-photo"></div><b>RAM ADDAGATLA</b><small>FULL STACK DEVELOPER</small><hr><strong>PROFILE</strong><i></i><strong>EXPERIENCE</strong><i></i></div></div><span class="template-choice-title">Modern</span><span class="template-choice-desc">Contemporary layout with a polished visual hierarchy.</span><span class="template-check">✓</span></button>
+              <button class="template-choice" data-template-choice="minimal" type="button"><div class="mini-paper minimal-mini"><div class="mini-photo"></div><b>RAM ADDAGATLA</b><small>FULL STACK DEVELOPER</small><hr><strong>EDUCATION</strong><i></i><strong>PROJECTS</strong><i></i><strong>SKILLS</strong><i></i></div><span class="template-choice-title">Minimal</span><span class="template-choice-desc">Simple, elegant and compact for one-page resumes.</span><span class="template-check">✓</span></button>
+              <button class="template-choice" data-template-choice="classic" type="button"><div class="mini-paper classic-mini"><div class="mini-photo"></div><b>RAM ADDAGATLA</b><small>SOFTWARE DEVELOPER</small><hr><strong>OBJECTIVE</strong><i></i><strong>EDUCATION</strong><i></i><strong>EXPERIENCE</strong><i></i></div><span class="template-choice-title">Classic</span><span class="template-choice-desc">Traditional professional format with strong section headings.</span><span class="template-check">✓</span></button>
+            </div>
+            <div class="wizard-actions"><button class="btn btn-primary" id="templateNext" type="button">Continue with this template →</button></div>
+          </div>
+
+          <!-- Steps 2-9 -->
+          <div class="ai-step" data-step="2" hidden>
+            <div class="step-intro"><span class="step-number">02</span><div><h3>Personal information</h3><p>Tell us who you are and how recruiters can contact you.</p></div></div>
+            <div class="wizard-grid two">
+              <label>Full name<input id="aiName" /></label>
+              <label>Target role<input id="aiRole" /></label>
+              <label>Email<input id="aiEmail" type="email" /></label>
+              <label>Phone<input id="aiPhone" type="tel" /></label>
+              <label>Location<input id="aiLocation" /></label>
+              <label>LinkedIn<input id="aiLinkedin" /></label>
+              <label>GitHub<input id="aiGithub" /></label>
+              <label>Portfolio<input id="aiPortfolio" /></label>
+            </div>
+            <div class="photo-upload-card"><div class="photo-preview" id="aiPhotoPreview"><span>📷</span></div><div><h4>Add a profile photo <em>Optional</em></h4><p>Use a clear professional photo. JPG, PNG or WEBP.</p><label class="upload-btn"><input type="file" id="aiPhoto" accept="image/png,image/jpeg,image/webp" /> Choose Photo</label><button class="text-btn" id="removePhoto" type="button" hidden>Remove photo</button></div></div>
+            <div class="wizard-actions"><button class="btn btn-soft ai-back" type="button">← Back</button><button class="btn btn-primary ai-next" type="button">Continue →</button></div>
+          </div>
+
+          <div class="ai-step" data-step="3" hidden>
+            <div class="step-intro"><span class="step-number">03</span><div><h3>Education</h3><p>Choose your education level and add the important details.</p></div></div>
+            <div class="mcq-group"><h4>What is your current education level?</h4><div class="option-grid" data-radio-group="educationLevel"><button class="option-card" data-value="Undergraduate" type="button">🎓<b>Undergraduate</b><small>Bachelor's degree / college</small></button><button class="option-card" data-value="Postgraduate" type="button">📚<b>Postgraduate</b><small>Master's degree</small></button><button class="option-card" data-value="Diploma" type="button">📘<b>Diploma</b><small>Diploma / certification</small></button><button class="option-card" data-value="Other" type="button">➕<b>Other</b><small>Something else</small></button></div></div>
+            <div class="wizard-grid two"><label>Degree / course<input id="aiDegree" /></label><label>College / university<input id="aiCollege" /></label><label>Start year<input id="aiEduStart" /></label><label>Graduation year<input id="aiEduEnd" /></label><label>CGPA / percentage<input id="aiScore" /></label></div>
+            <div class="wizard-actions"><button class="btn btn-soft ai-back" type="button">← Back</button><button class="btn btn-primary ai-next" type="button">Continue →</button></div>
+          </div>
+
+          <div class="ai-step" data-step="4" hidden>
+            <div class="step-intro"><span class="step-number">04</span><div><h3>Skills & strengths</h3><p>Select skills you actually know. You can add custom skills too.</p></div></div>
+            <div class="mcq-group"><h4>Which technical skills do you have?</h4><div class="chip-grid" id="skillChoices"><button type="button" data-value="HTML">HTML</button><button type="button" data-value="CSS">CSS</button><button type="button" data-value="JavaScript">JavaScript</button><button type="button" data-value="Java">Java</button><button type="button" data-value="Python">Python</button><button type="button" data-value="SQL">SQL</button><button type="button" data-value="React">React</button><button type="button" data-value="Node.js">Node.js</button><button type="button" data-value="Express.js">Express.js</button><button type="button" data-value="MongoDB">MongoDB</button><button type="button" data-value="Git/GitHub">Git/GitHub</button><button type="button" data-value="Bootstrap">Bootstrap</button></div></div>
+            <label class="full-label">Other skills<input id="aiOtherSkills" /></label>
+            <div class="mcq-group"><h4>What is your experience level?</h4><div class="option-grid three" data-radio-group="experienceLevel"><button class="option-card" data-value="Fresher" type="button">🌱<b>Fresher</b><small>No professional experience</small></button><button class="option-card" data-value="Internship Experience" type="button">💼<b>Internship Experience</b><small>Completed internship(s)</small></button><button class="option-card" data-value="Work Experience" type="button">🚀<b>Work Experience</b><small>Professional experience</small></button></div></div>
+            <div class="wizard-actions"><button class="btn btn-soft ai-back" type="button">← Back</button><button class="btn btn-primary ai-next" type="button">Continue →</button></div>
+          </div>
+
+          <div class="ai-step" data-step="5" hidden>
+            <div class="step-intro"><span class="step-number">05</span><div><h3>Experience / internship</h3><p>Tell us about practical work. If you're a fresher, you can skip this step.</p></div></div>
+            <div class="mcq-group"><h4>Do you have internship or work experience?</h4><div class="option-grid three" data-radio-group="hasExperience"><button class="option-card" data-value="yes" type="button">✅<b>Yes</b><small>I have experience to add</small></button><button class="option-card" data-value="no" type="button">🌱<b>No</b><small>I'm a fresher</small></button><button class="option-card" data-value="skip" type="button">⏭️<b>Skip for now</b><small>I'll add it later</small></button></div></div>
+            <div id="experienceQuestionBox" class="conditional-box" hidden><div class="wizard-grid two"><label>Job title / position<input id="aiExpRole" /></label><label>Company<input id="aiExpCompany" /></label><label>Duration<input id="aiExpDuration" /></label></div><label class="full-label">What did you work on?<textarea id="aiExpDescription" rows="4"></textarea></label></div>
+            <div class="wizard-actions"><button class="btn btn-soft ai-back" type="button">← Back</button><button class="btn btn-primary ai-next" type="button">Continue →</button></div>
+          </div>
+
+          <div class="ai-step" data-step="6" hidden>
+            <div class="step-intro"><span class="step-number">06</span><div><h3>Projects</h3><p>Projects are especially important for students and freshers.</p></div></div>
+            <div id="aiProjectQuestions"></div>
+            <button class="add-outline" id="addAIProject" type="button">+ Add another project</button>
+            <div class="wizard-actions"><button class="btn btn-soft ai-back" type="button">← Back</button><button class="btn btn-primary ai-next" type="button">Continue →</button></div>
+          </div>
+
+          <div class="ai-step" data-step="7" hidden>
+            <div class="step-intro"><span class="step-number">07</span><div><h3>Certifications & achievements</h3><p>Select what applies to you and add details where relevant.</p></div></div>
+            <div class="mcq-group"><h4>Which achievements or credentials do you have?</h4><div class="chip-grid" id="credentialChoices"><button type="button" data-value="Certifications">📜 Certifications</button><button type="button" data-value="Hackathons">💻 Hackathons</button><button type="button" data-value="Awards">🏆 Awards</button><button type="button" data-value="Leadership">👥 Leadership</button><button type="button" data-value="Positions of Responsibility">🎯 Positions of Responsibility</button><button type="button" data-value="None yet">🌱 None yet</button></div></div>
+            <label class="full-label">Certifications<textarea id="aiCertifications" rows="3"></textarea></label>
+            <label class="full-label">Achievements / leadership<textarea id="aiAchievements" rows="4"></textarea></label>
+            <div class="wizard-actions"><button class="btn btn-soft ai-back" type="button">← Back</button><button class="btn btn-primary ai-next" type="button">Continue →</button></div>
+          </div>
+
+          <div class="ai-step" data-step="8" hidden>
+            <div class="step-intro"><span class="step-number">08</span><div><h3>Career preferences</h3><p>These answers help CareerPilot AI tailor your summary and wording.</p></div></div>
+            <div class="mcq-group"><h4>What kind of opportunity are you targeting?</h4><div class="option-grid three" data-radio-group="opportunity"><button class="option-card" data-value="Internship" type="button">🎓<b>Internship</b><small>Looking for internships</small></button><button class="option-card" data-value="Full-time" type="button">💼<b>Full-time</b><small>Looking for a job</small></button><button class="option-card" data-value="Both" type="button">🚀<b>Both</b><small>Open to both</small></button></div></div>
+            <div class="mcq-group"><h4>What should your resume emphasize?</h4><div class="option-grid three" data-radio-group="emphasis"><button class="option-card" data-value="Projects" type="button">🚀<b>Projects</b><small>Hands-on work</small></button><button class="option-card" data-value="Experience" type="button">💼<b>Experience</b><small>Internships/work</small></button><button class="option-card" data-value="Balanced" type="button">⚖️<b>Balanced</b><small>Everything relevant</small></button></div></div>
+            <label class="full-label">Anything else CareerPilot AI should know? <textarea id="aiAdditional" rows="4"></textarea></label>
+            <div class="wizard-actions"><button class="btn btn-soft ai-back" type="button">← Back</button><button class="btn btn-primary ai-next" type="button">Review Details →</button></div>
+          </div>
+
+          <div class="ai-step" data-step="9" hidden>
+            <div class="step-intro"><span class="step-number">09</span><div><h3>Review & generate</h3><p>Check your information. CareerPilot AI will turn your answers into professional resume content.</p></div></div>
+            <div class="review-grid" id="aiReviewGrid"></div>
+            <div class="generate-card"><div class="generate-icon">✦</div><div><h3>Ready to generate your resume?</h3><p>Your selected template and answers will be used to create the final resume.</p></div><button class="btn btn-primary" id="generateAIResume" type="button">✨ Generate My Resume</button></div>
+            <div class="wizard-actions"><button class="btn btn-soft ai-back" type="button">← Back</button></div>
+          </div>
+
+          <!-- Final result -->
+          <div class="ai-result" id="aiResult" hidden>
+            <div class="result-success"><span>✓</span><div><h2>Your AI resume is ready!</h2><p>Review it below. You can download it now or edit any section in the manual builder.</p></div></div>
+            <div class="result-actions"><button class="btn btn-soft" id="editGeneratedResume" type="button">✏ Edit Resume</button><button class="btn btn-primary" id="downloadAIResume" type="button">Download Resume PDF ↓</button></div>
+          </div>
+        </section>
+
+        <!-- MANUAL BUILDER -->
+        <div class="builder-grid" id="manualBuilder">
+          <form id="resumeForm" class="builder-form resume-form" autocomplete="off">
+            <div class="builder-head"><div><span class="section-label">MANUAL RESUME BUILDER</span><h2>Build your resume</h2></div><span id="completionText">0% complete</span></div>
+            <div class="completion-bar"><span id="completionBar"></span></div>
+
+            <section class="form-section"><div class="form-section-title"><div><span class="form-icon">👤</span><div><h3>Personal Information</h3><p>Your basic contact details.</p></div></div></div><div class="form-grid two-col">
+              <label>Full Name<input id="resumeName" /></label><label>Target Role<input id="resumeRole" /></label>
+              <label>Email<input id="resumeEmail" type="email" /></label><label>Phone<input id="resumePhone" type="tel" /></label>
+              <label>Location<input id="resumeLocation" /></label><label>LinkedIn<input id="resumeLinkedin" /></label>
+              <label>GitHub<input id="resumeGithub" /></label><label>Portfolio<input id="resumePortfolio" /></label>
+            </div><div class="manual-photo-row"><div class="photo-preview small" id="manualPhotoPreview"><span>📷</span></div><label class="upload-btn"><input type="file" id="manualPhoto" accept="image/png,image/jpeg,image/webp" /> Upload profile photo</label><button class="text-btn" id="removeManualPhoto" type="button" hidden>Remove</button></div></section>
+
+            <section class="form-section"><div class="form-section-title"><div><span class="form-icon">✦</span><div><h3>Professional Summary</h3><p>Write it yourself or improve it later with AI.</p></div></div><button class="mini-ai" data-ai-field="summary" type="button">✦ Improve</button></div><label><textarea id="resumeSummary" rows="5"></textarea></label></section>
+
+            <section class="form-section"><div class="form-section-title"><div><span class="form-icon">🎓</span><div><h3>Education</h3><p>Add your latest and relevant education.</p></div></div><button class="add-btn" id="addEducation" type="button">+ Add Education</button></div><div id="educationList" class="repeat-list"></div></section>
+            <section class="form-section"><div class="form-section-title"><div><span class="form-icon">💼</span><div><h3>Experience / Internship</h3><p>Show practical experience and responsibilities.</p></div></div><button class="add-btn" id="addExperience" type="button">+ Add Experience</button></div><div id="experienceList" class="repeat-list"></div></section>
+            <section class="form-section"><div class="form-section-title"><div><span class="form-icon">🛠</span><div><h3>Skills</h3><p>Separate skills with commas.</p></div></div></div><label>Technical Skills<input id="resumeSkills" /></label><label>Tools / Technologies<input id="resumeTools" /></label></section>
+            <section class="form-section"><div class="form-section-title"><div><span class="form-icon">🚀</span><div><h3>Projects</h3><p>Projects demonstrate what you can actually build.</p></div></div><button class="add-btn" id="addProject" type="button">+ Add Project</button></div><div id="projectList" class="repeat-list"></div></section>
+            <section class="form-section"><div class="form-section-title"><div><span class="form-icon">📜</span><div><h3>Certifications</h3><p>Add relevant certifications.</p></div></div><button class="add-btn" id="addCertification" type="button">+ Add Certification</button></div><div id="certificationList" class="repeat-list"></div></section>
+            <section class="form-section"><div class="form-section-title"><div><span class="form-icon">🏆</span><div><h3>Achievements</h3><p>Hackathons, awards, leadership and achievements.</p></div></div></div><label><textarea id="resumeAchievements" rows="4"></textarea></label></section>
+            <div class="form-actions"><button class="btn btn-secondary" id="clearResume" type="button">Clear</button><button class="btn btn-primary" type="submit">Update Resume Preview →</button></div>
+          </form>
+
+          <div class="resume-preview" id="resumePreview">
+            <div class="preview-toolbar"><div><span>LIVE PREVIEW</span><small id="templateLabel">ATS Professional</small></div><div class="toolbar-actions"><select id="templateSelect" aria-label="Resume template"><option value="ats">ATS Professional</option><option value="modern">Modern</option><option value="minimal">Minimal</option><option value="classic">Classic</option></select><button type="button" id="saveDraft" class="btn btn-soft">Save Draft</button><button type="button" id="downloadResume" class="btn btn-primary">Download PDF ↓</button></div></div>
+            <article class="paper resume-paper template-ats" id="resumePaper">
+              <header class="resume-header"><div class="resume-header-main"><h1 id="pName">Your Name</h1><h3 id="pRole">Target Role</h3><div class="contact-line" id="pContact">Email · Phone · Location</div><div class="link-line" id="pLinks">LinkedIn · GitHub · Portfolio</div></div><img id="pPhoto" class="resume-photo" alt="Profile photo" hidden /></header><div class="paper-line"></div>
+              <div class="resume-section" id="previewSummarySection"><h4>SUMMARY</h4><p id="pSummary">Your professional summary will appear here.</p></div>
+              <div class="resume-section" id="previewEducationSection"><h4>EDUCATION</h4><div id="pEducation"></div></div>
+              <div class="resume-section" id="previewExperienceSection"><h4>EXPERIENCE</h4><div id="pExperience"></div></div>
+              <div class="resume-section" id="previewSkillsSection"><h4>SKILLS</h4><div id="pSkills" class="skill-list"></div></div>
+              <div class="resume-section" id="previewProjectsSection"><h4>PROJECTS</h4><div id="pProjects"></div></div>
+              <div class="resume-section" id="previewCertificationsSection"><h4>CERTIFICATIONS</h4><div id="pCertifications"></div></div>
+              <div class="resume-section" id="previewAchievementsSection"><h4>ACHIEVEMENTS</h4><p id="pAchievements"></p></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="resume-tips"><div><strong>💡 CareerPilot Tip</strong><p>Keep your resume focused on the role you are applying for. Use clear project descriptions and measurable results.</p></div><div><strong>✦ AI workflow</strong><p>The guided builder collects structured information first. Real AI API generation can be connected to your Node.js backend later.</p></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark">✦</span>CareerPilot<span class="brand-ai"> AI</span></a><p>Your AI-powered companion for placement preparation and career growth.</p></div><div><h4>Platform</h4><a href="courses.html">Courses</a><a href="roadmaps.html">Roadmaps</a><a href="resume.html">Resume Builder</a><a href="interviews.html">Mock Interviews</a></div><div><h4>Company</h4><a href="about.html">About Us</a><a href="contact.html">Contact</a></div><div><h4>Account</h4><a href="login.html">Log in</a><a href="signup.html">Sign up</a></div></div><div class="container footer-bottom"><span>© 2026 CareerPilot AI. All rights reserved.</span><span>Built for students, with AI.</span></div></footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="js/resume.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

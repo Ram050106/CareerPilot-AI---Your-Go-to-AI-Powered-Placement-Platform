@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Courses | CareerPilot AI</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <a class="brand" href="index.html"
+        ><span class="brand-mark">✦</span>CareerPilot<span class="brand-ai">
+          AI</span
+        ></a
+      ><button class="menu-toggle">☰</button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a><a href="about.html">About Us</a
+        ><a class="active" href="courses.html">Courses</a
+        ><a href="roadmaps.html">Roadmaps</a
+        ><a href="resume.html">Resume Builder</a
+        ><a href="interviews.html">Mock Interviews</a
+        ><a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="login.html">Log in</a
+        ><a class="btn btn-primary btn-small" href="signup.html">Get Started</a>
+      </div>
+    </header>
+    <main>
+      <section class="page-hero compact">
+        <div class="container">
+          <span class="section-label">LEARNING HUB</span>
+          <h1>Learn skills that <span>move your career forward.</span></h1>
+          <p>Curated courses organized by role, skill and difficulty.</p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="course-toolbar">
+            <input
+              id="courseSearch"
+              class="search-input"
+              placeholder="Search courses..."
+            /><select id="courseFilter">
+              <option value="all">All levels</option>
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+            </select>
+            <select id="courseTypeFilter">
+              <option value="all">Free & paid</option>
+              <option value="free">Free courses</option>
+              <option value="premium">Paid courses</option>
+            </select>
+          </div>
+          <div id="courseGrid" class="course-grid"></div>
+        </div>
+      </section>
+      <section class="section light-section course-video-section">
+        <div class="container">
+          <div class="section-heading center">
+            <span class="section-label">LEARN IN MOTION</span>
+            <h2>Short lessons for your <span>next focused session.</span></h2>
+            <p>
+              Start with a practical concept, then return to the full course
+              when you are ready to go deeper.
+            </p>
+          </div>
+          <div class="video-grid">
+            <article class="video-card">
+              <div class="video-frame">
+                <img
+                  src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+                  alt="Laptop showing a coding workspace"
+                  loading="lazy"
+                />
+                <a class="video-play" href="Webworks.mp4" target="_blank" rel="noopener">▶</a><small>08:24</small>
+              </div>
+              <div>
+                <span class="tag">Frontend</span>
+                <h3>How the web really works</h3>
+                <p>
+                  Understand the browser, HTML and CSS before you write your
+                  next interface.
+                </p>
+              </div>
+            </article>
+            <article class="video-card">
+              <div class="video-frame">
+                <img
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80"
+                  alt="Data dashboard with charts"
+                  loading="lazy"
+                />
+                <a class="video-play" href="Dashboard.mp4" target="_blank" rel="noopener">▶</a><small>12:10</small>
+              </div>
+              <div>
+                <span class="tag">Data</span>
+                <h3>Read a dashboard like an analyst</h3>
+                <p>
+                  Learn the questions that turn raw numbers into useful
+                  decisions.
+                </p>
+              </div>
+            </article>
+            <article class="video-card">
+              <div class="video-frame">
+                <img
+                  src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=900&q=80"
+                  alt="Developer writing code on a laptop"
+                  loading="lazy"
+                />
+                <a class="video-play" href="Interview.mp4" target="_blank" rel="noopener">▶</a><small>10:45</small>
+              </div>
+              <div>
+                <span class="tag">Interview</span>
+                <h3>Think out loud in technical interviews</h3>
+                <p>
+                  A simple structure for communicating your reasoning under
+                  pressure.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <span class="brand-mark">✦</span>CareerPilot<span class="brand-ai">
+              AI</span
+            ></a
+          >
+          <p>
+            Your AI-powered companion for placement preparation and career
+            growth.
+          </p>
+        </div>
+        <div>
+          <h4>Platform</h4>
+          <a href="courses.html">Courses</a>
+          <a href="roadmaps.html">Roadmaps</a>
+          <a href="resume.html">Resume Builder</a>
+          <a href="interviews.html">Mock Interviews</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Account</h4>
+          <a href="login.html">Log in</a>
+          <a href="signup.html">Sign up</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© 2026 CareerPilot AI. All rights reserved.</span>
+        <span>Built for students, with AI.</span>
+      </div>
+    </footer>
+    <script src="js/courses.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Log in | CareerPilot AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="auth-page">
+    <div class="auth-layout">
+      <div class="auth-brand-panel">
+        <div class="brand"
+          ><span class="brand-mark">✦</span>CareerPilot<span class="brand-ai">
+            AI</span
+          ></div
+        >
+        <div class="auth-promo">
+          <span class="eyebrow">✦ YOUR CAREER, ON AUTOPILOT</span>
+          <h1>Turn your ambition into a <span>career plan.</span></h1>
+          <p>
+            Personalized roadmaps, curated learning, AI resumes and mock
+            interviews—all in one place.
+          </p>
+          <div class="auth-preview">
+            <div class="preview-header">
+              <span>YOUR WEEKLY FOCUS</span><b>84%</b>
+            </div>
+            <div class="preview-progress"><span></span></div>
+            <div class="preview-row">
+              <span class="preview-icon blue">↗</span>
+              <div>
+                <b>Frontend roadmap</b><small>3 milestones completed</small>
+              </div>
+              <strong>+12%</strong>
+            </div>
+            <div class="preview-row">
+              <span class="preview-icon orange">✎</span>
+              <div>
+                <b>Resume strength</b><small>ATS-ready improvements</small>
+              </div>
+              <strong>Good</strong>
+            </div>
+            <div class="preview-row">
+              <span class="preview-icon green">✓</span>
+              <div>
+                <b>Interview practice</b><small>Keep your momentum going</small>
+              </div>
+              <strong>4 day</strong>
+            </div>
+          </div>
+          <div class="promo-points">
+            <span>✓ One focused workspace</span
+            ><span>✓ Practical progress every week</span>
+          </div>
+        </div>
+      </div>
+      <div class="auth-form-panel">
+        <div class="auth-form-wrap">
+          <div class="mobile-auth-brand brand"
+            ><span class="brand-mark">✦</span>CareerPilot<span class="brand-ai">
+              AI</span
+            ></div
+          ><a class="back-link" href="index.html">← Back to home</a>
+          <div class="auth-heading">
+            <span class="section-label">WELCOME BACK</span>
+            <h2>Log in to your account</h2>
+            <p>Continue your career journey.</p>
+          </div>
+          <form id="loginForm" class="auth-form">
+            <label
+              >Email address<input
+                id="loginEmail"
+                type="email"
+                placeholder="you@example.com"
+                required /></label
+            ><label
+              >Password
+              <div class="password-field">
+                <input
+                  id="loginPassword"
+                  type="password"
+                  placeholder="Enter your password"
+                  required
+                /><button type="button" class="password-toggle">Show</button>
+              </div></label
+            >
+            <div class="form-row">
+              <label class="check">
+                <input type="checkbox" />
+                <span>Remember me</span> </label
+              ><a
+                href="#"
+                onclick="alert('Password reset will be connected to the backend later.');return false;"
+                >Forgot password?</a
+              >
+            </div>
+            <button class="btn btn-primary btn-full" type="submit">
+              Log in →
+            </button>
+          </form>
+          <p class="auth-switch">
+            Don't have an account? <a href="signup.html">Create one</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

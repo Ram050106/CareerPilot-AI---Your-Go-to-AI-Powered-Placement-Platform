@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CareerPilot AI - AI powered resume based mock interviews" />
+  <title>AI Mock Interview | CareerPilot AI</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/interview-room.css" />
+</head>
+<body class="mock-interview-page">
+<header class="navbar">
+  <a class="brand" href="index.html"><span class="brand-mark">✦</span>CareerPilot<span class="brand-ai"> AI</span></a>
+  <button class="menu-toggle" type="button">☰</button>
+  <nav class="nav-links">
+    <a href="index.html">Home</a><a href="about.html">About Us</a><a href="courses.html">Courses</a>
+    <a href="roadmaps.html">Roadmaps</a><a href="resume.html">Resume Builder</a>
+    <a class="active" href="interviews.html">Mock Interviews</a><a href="contact.html">Contact</a>
+  </nav>
+  <div class="nav-actions"><span class="profile-chip"><span class="profile-avatar" id="profileInitial">R</span><span id="profileName"></span></span><a class="btn btn-ghost btn-small" href="login.html">Log in</a><a class="btn btn-primary btn-small" href="signup.html">Get Started</a></div>
+</header>
+
+<main>
+  <!-- LANDING -->
+  <section id="interviewLanding" class="mock-view">
+    <section class="mock-hero interview-hero-v2">
+      <div class="container mock-hero-grid">
+        <div class="mock-hero-copy">
+          <span class="eyebrow">✦ AI-POWERED INTERVIEW STUDIO</span>
+          <h1>Practice interviews like they're <span>real.</span></h1>
+          <p>Upload your resume, let CareerPilot AI understand your profile, then practice with a voice-and-video AI interviewer that asks personalized questions and gives you a detailed performance report.</p>
+          <div class="mock-hero-actions"><button class="btn btn-primary btn-large" id="startMockBtn">Start Mock Interview <span>→</span></button><button class="btn btn-secondary btn-large" id="viewHistoryBtn">View History</button></div>
+          <div class="mock-trust"><span>✓ Resume-based questions</span><span>✓ Voice, video or text</span><span>✓ AI feedback report</span></div>
+        </div>
+        <div class="mock-hero-visual">
+          <div class="hero-interview-window interview-demo-card">
+            <div class="window-bar"><span></span><span></span><span></span><b>LIVE AI INTERVIEW</b></div>
+            <div class="demo-room">
+              <div class="demo-avatar-wrap"><div class="ai-avatar-face demo-avatar"><span>AI</span><i></i></div><b>CareerPilot AI</b><small>AI Interviewer · Speaking</small><div class="demo-wave"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+              <div class="demo-question"><small>QUESTION 3 OF 8 · TECHNICAL</small><strong>How did you approach the architecture of your project?</strong><div class="demo-answer"><span>🎤</span> Listening to your answer...</div></div>
+            </div>
+          </div>
+          <div class="hero-float-card"><span class="float-icon green">✓</span><div><b>Personalized feedback</b><small>Technical + communication insights</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section mock-category-section"><div class="container"><div class="section-heading"><span class="section-label">HOW IT WORKS</span><h2>Your resume becomes your <span>interview plan.</span></h2><p>CareerPilot AI uses your profile and selected role to create a focused interview session.</p></div><div class="ai-flow-grid"><article><span>01</span><h3>Upload Resume</h3><p>Upload your latest PDF or DOCX resume.</p></article><article><span>02</span><h3>AI Analysis</h3><p>Skills, projects, experience and education are identified.</p></article><article><span>03</span><h3>Live Interview</h3><p>Answer using camera, microphone or text.</p></article><article><span>04</span><h3>Get Feedback</h3><p>Review your answers, scores and improvement plan.</p></article></div></div></section>
+
+    <section id="historySection" class="section light-section mock-history-section"><div class="container"><div class="section-heading row-heading"><div><span class="section-label">YOUR HISTORY</span><h2>Previous interview sessions.</h2></div><button class="btn btn-secondary" id="newSessionBtn">New interview <span>→</span></button></div><div id="historyList" class="history-list"></div></div></section>
+  </section>
+
+  <!-- RESUME + SETUP -->
+  <section id="interviewSetup" class="mock-view hidden">
+    <div class="container setup-page resume-setup-page">
+      <button class="back-link" id="backLandingBtn">← Back to interview studio</button>
+      <div class="setup-heading"><span class="section-label">STEP 1 · RESUME ANALYSIS</span><h1>Build a personalized <span>interview.</span></h1><p>Upload your resume first. CareerPilot AI will extract your skills, projects and experience before generating questions.</p></div>
+      <div class="resume-setup-grid">
+        <section class="resume-upload-card">
+          <div class="card-kicker"><span class="step-circle">1</span><div><b>Upload your resume</b><small>PDF, DOC or DOCX · Max 10 MB</small></div></div>
+          <label class="drop-zone" id="dropZone" for="resumeFileInput"><input id="resumeFileInput" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" hidden /><span class="upload-icon">↑</span><strong>Drop your resume here</strong><small>or click to browse files</small></label>
+          <div id="filePreview" class="file-preview hidden"></div>
+          <button id="analyzeResumeBtn" class="btn btn-primary btn-large btn-full" type="button" disabled>Analyze Resume <span>✦</span></button>
+          <p class="privacy-note">🔒 Your camera and microphone are used only during the live interview. Camera recordings are not stored by this page.</p>
+        </section>
+        <aside class="analysis-card" id="analysisCard"><div class="analysis-empty"><div class="analysis-icon">✦</div><h3>AI Resume Analysis</h3><p>Upload your resume and click Analyze Resume to generate your personalized candidate profile.</p><div class="analysis-mini-list"><span>✓ Skills</span><span>✓ Projects</span><span>✓ Experience</span><span>✓ Education</span></div></div></aside>
+      </div>
+      <div id="interviewConfig" class="interview-config hidden">
+        <div class="config-heading"><div><span class="section-label">STEP 2 · INTERVIEW CONFIGURATION</span><h2>Choose your interview settings.</h2></div><span class="ready-pill">✓ Resume analyzed</span></div>
+        <div class="config-grid">
+          <label>Target role<select id="setupRole"><option>Full Stack Developer</option><option>Frontend Developer</option><option>Backend Developer</option><option>Java Developer</option><option>Python Developer</option><option>SQL / Database</option><option>Software Developer</option><option>HR / Behavioral</option></select></label>
+          <label>Interview type<select id="setupType"><option>Mixed</option><option>Technical</option><option>HR</option><option>Behavioral</option></select></label>
+          <label>Difficulty<select id="setupDifficulty"><option>Easy</option><option selected>Medium</option><option>Hard</option></select></label>
+          <label>Questions<select id="setupQuestions"><option value="5">5 Questions</option><option value="8" selected>8 Questions</option><option value="10">10 Questions</option></select></label>
+        </div>
+        <div class="mode-options"><span class="field-label">Answer mode</span><label><input type="radio" name="answerMode" value="voice-video" checked><span>🎥 Voice + Video<small>Recommended</small></span></label><label><input type="radio" name="answerMode" value="voice"><span>🎤 Voice only<small>Speech to text</small></span></label><label><input type="radio" name="answerMode" value="text"><span>⌨️ Text only<small>No permissions needed</small></span></label></div>
+        <button id="beginInterviewBtn" class="btn btn-primary btn-large" type="button">Start AI Interview <span>→</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE ROOM -->
+  <section id="interviewWorkspace" class="mock-view hidden interview-room-view">
+    <div class="interview-topbar"><div class="container interview-topbar-inner"><button class="back-link" id="exitInterview">← Exit</button><div class="session-name"><span class="ai-avatar small">✦</span><div><b id="workspaceRole">Full Stack Developer</b><small id="workspaceType">Mixed · Medium</small></div></div><div class="workspace-timer" id="timerWrap"><span>◷</span><b id="interviewTimer">08:00</b><small>remaining</small></div><button class="btn btn-primary btn-small" id="finishInterviewTop" type="button">Finish</button></div></div>
+    <div class="container live-room-shell">
+      <aside class="live-sidebar"><div class="sidebar-title"><div><span class="section-label">INTERVIEW MAP</span><h3>Questions</h3></div><span id="questionCount">01 / 08</span></div><div id="questionNav" class="question-nav"></div><div class="sidebar-progress"><div class="progress-label"><span>Progress</span><b id="progressPercent">0%</b></div><div class="progress-track"><span id="progressBar"></span></div></div><div class="resume-mini" id="resumeMini"><span>✦</span><div><b>Resume analyzed</b><small>Questions are personalized to your profile.</small></div></div></aside>
+      <section class="live-main-card">
+        <div class="live-header"><div><span class="section-label">LIVE AI INTERVIEW</span><h2 id="liveStateTitle">AI interviewer is ready</h2></div><span class="live-badge"><i></i> LIVE</span></div>
+        <div class="interviewer-stage">
+          <div class="ai-interviewer-card" id="aiInterviewerCard"><div class="ai-interviewer-top"><div class="ai-avatar-face"><span>AI</span><i></i></div><div><b>CareerPilot AI</b><small id="aiStatus">AI Interviewer · Online</small></div><span class="online-dot"></span></div><div class="ai-avatar-main"><div class="ai-orb"><div class="ai-orb-core">✦</div><div class="orb-ring ring-one"></div><div class="orb-ring ring-two"></div></div></div><div class="speaking-indicator" id="speakingIndicator"><span></span><span></span><span></span><span></span><span></span><b>AI is speaking</b></div></div>
+          <div class="candidate-card"><video id="candidateVideo" autoplay muted playsinline></video><div id="cameraPlaceholder" class="camera-placeholder"><span>📹</span><b>Camera is off</b><small>You can answer by text without enabling it.</small></div><div class="candidate-label"><small id="mediaStatus">Camera & mic off</small></div></div>
+        </div>
+        <div class="question-card"><div class="question-meta"><span id="questionKicker">QUESTION 01 · TECHNICAL</span><span id="questionDifficulty">MEDIUM</span></div><h1 id="questionTitle">Loading question...</h1><button id="repeatQuestionButton" class="repeat-btn" type="button">🔊 Repeat question</button></div>
+        <div class="answer-panel"><div class="answer-panel-top"><div><b>Your answer</b><small id="answerModeHint">Speak naturally or type your answer below.</small></div><span id="recordStatus" class="record-status">Ready</span></div><textarea id="answerInput" rows="6" placeholder="Type your answer here, or use the microphone to speak..."></textarea><div class="voice-transcript" id="voiceTranscript"></div></div>
+        <div class="media-controls"><button id="startMediaButton" class="control-btn primary" type="button">📹 Enable camera & mic</button><button id="toggleCameraButton" class="control-btn" type="button" disabled>📹 Camera</button><button id="toggleMicButton" class="control-btn" type="button" disabled>🎤 Mic</button><button id="recordButton" class="control-btn record" type="button">🎙 Start answering</button></div>
+        <div class="question-footer"><button class="btn btn-ghost" id="skipQuestion" type="button">Skip</button><div><button class="btn btn-secondary" id="previousQuestion" type="button">← Previous</button><button class="btn btn-primary" id="submitAnswer" type="button">Submit & Continue <span>→</span></button></div></div>
+      </section>
+      <aside class="live-coach"><div class="coach-head"><div class="ai-status"><span class="ai-avatar">✦</span><div><b>AI Coach</b><small><i></i> Session active</small></div></div></div><div class="coach-section"><span class="section-label">ANSWER TIPS</span><div class="tip-box" id="coachTip">Start with your direct answer, then give a short example and explain the result.</div></div><div class="coach-section"><span class="section-label">SESSION</span><div class="session-stat"><span>Answered</span><b id="answeredStat">0</b></div><div class="session-stat"><span>Remaining</span><b id="remainingStat">8</b></div></div><div class="coach-note"><span>✦</span><p>Your responses are saved locally for this practice session. No camera recording is stored.</p></div></aside>
+    </div>
+  </section>
+
+  <!-- COMPLETE -->
+  <section id="interviewComplete" class="mock-view hidden"><div class="container completion-page"><div class="completion-icon">✓</div><span class="section-label">SESSION COMPLETE</span><h1>Interview completed. <span>Great practice.</span></h1><p id="completionText">Your interview report is ready.</p><div class="completion-summary" id="completionSummary"></div><div class="completion-actions"><button class="btn btn-primary btn-large" id="viewReport">View AI Performance Report <span>→</span></button><button class="btn btn-secondary btn-large" id="practiceAgain">Practice another interview</button></div></div></section>
+
+  <!-- REPORT -->
+  <section id="reportView" class="mock-view hidden"><div class="container report-page"><div class="report-heading"><button class="back-link" id="reportBack">← Back to interview studio</button><div class="report-heading-row"><div><span class="section-label">AI PERFORMANCE REPORT</span><h1>Your practice, <span>decoded.</span></h1><p id="reportSubtitle"></p></div><button class="btn btn-primary" id="reportPracticeAgain">Practice again <span>→</span></button></div></div><div class="report-overview"><div class="overall-score"><span class="section-label">OVERALL SCORE</span><div class="score-circle"><strong id="overallScore">0</strong><small>/100</small></div><b id="scoreLabel">Session complete</b><p id="scoreSummary"></p></div><div class="score-breakdown" id="scoreBreakdown"></div></div><div class="report-grid"><div class="report-column"><section class="report-card"><div class="report-card-heading"><span class="feedback-icon good">✓</span><div><span class="section-label">KEEP DOING</span><h2>What You Did Well</h2></div></div><ul id="strengthList"></ul></section><section class="report-card"><div class="report-card-heading"><span class="feedback-icon improve">↗</span><div><span class="section-label">NEXT LEVEL</span><h2>Areas to Improve</h2></div></div><ul id="improvementList"></ul></section></div><div class="report-column"><section class="report-card ai-suggestions"><div class="report-card-heading"><span class="feedback-icon ai">✦</span><div><span class="section-label">YOUR AI COACH SAYS</span><h2>Personalized Suggestions</h2></div></div><p id="aiSuggestion"></p></section><section class="report-card"><div class="report-card-heading"><span class="feedback-icon topic">▤</span><div><span class="section-label">KEEP LEARNING</span><h2>Recommended Topics</h2></div></div><div id="topicList" class="topic-list"></div></section></div></div><section class="report-card feedback-wide"><div class="report-card-heading"><span class="feedback-icon technical">✦</span><div><span class="section-label">QUESTION REVIEW</span><h2>Your answers</h2></div></div><div id="answerReview" class="answer-review-list"></div></section></div></section>
+</main>
+<footer class="footer"><div class="container footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark">✦</span>CareerPilot<span class="brand-ai"> AI</span></a><p>Your AI-powered companion for placement preparation and career growth.</p></div><div><h4>Platform</h4><a href="courses.html">Courses</a><a href="roadmaps.html">Roadmaps</a><a href="resume.html">Resume Builder</a><a href="interviews.html">Mock Interviews</a></div><div><h4>Company</h4><a href="about.html">About Us</a><a href="contact.html">Contact</a></div><div><h4>Account</h4><a href="login.html">Log in</a><a href="signup.html">Sign up</a></div></div><div class="container footer-bottom"><span>© 2026 CareerPilot AI. All rights reserved.</span><span>Built for students, with AI.</span></div></footer>
+
+<!-- Optional document parsers. The page still works with filename-based analysis if these CDNs are unavailable. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js"></script>
+<script src="js/interview.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Create account | CareerPilot AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="auth-page">
+    <div class="auth-layout">
+      <div class="auth-brand-panel">
+        <div class="brand"
+          ><span class="brand-mark">✦</span>CareerPilot<span class="brand-ai">
+            AI</span
+          ></div
+        >
+        <div class="auth-promo">
+          <span class="eyebrow">✦ START YOUR JOURNEY</span>
+          <h1>Build skills. Build projects. <span>Get hired.</span></h1>
+          <p>
+            CareerPilot AI gives you a clear path from where you are today to
+            the role you want tomorrow.
+          </p>
+          <div class="auth-stat-grid">
+            <div><strong>25+</strong><span>role roadmaps</span></div>
+            <div><strong>150+</strong><span>curated courses</span></div>
+            <div><strong>10K+</strong><span>practice questions</span></div>
+          </div>
+          <div class="auth-note">
+            <span>✦</span>
+            <p>
+              Your next step is already waiting. Start small, stay consistent
+              and let the plan get clearer as you go.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="auth-form-panel">
+        <div class="auth-form-wrap">
+          <div class="mobile-auth-brand brand"
+            ><span class="brand-mark">✦</span>CareerPilot<span class="brand-ai">
+              AI</span
+            ></div
+          ><a class="back-link" href="index.html">← Back to home</a>
+          <div class="auth-heading">
+            <span class="section-label">GET STARTED</span>
+            <h2>Create your account</h2>
+            <p>Start your personalized career journey for free.</p>
+          </div>
+          <form id="signupForm" class="auth-form">
+            <label
+              >Full name<input
+                id="signupName"
+                type="text"
+                placeholder="Your full name"
+                required /></label
+            ><label
+              >Email address<input
+                id="signupEmail"
+                type="email"
+                placeholder="you@example.com"
+                required /></label
+            ><label
+              >Password
+              <div class="password-field">
+                <input
+                  id="signupPassword"
+                  type="password"
+                  minlength="6"
+                  placeholder="At least 6 characters"
+                  required
+                /><button type="button" class="password-toggle">Show</button>
+              </div></label
+            ><label class="check terms">
+              <input type="checkbox" required />
+              <span
+                >I agree to the Terms of Service and Privacy Policy.</span
+              > </label
+            ><button class="btn btn-primary btn-full" type="submit">
+              Create Account →
+            </button>
+          </form>
+          <p class="auth-switch">
+            Already have an account? <a href="login.html">Log in</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
