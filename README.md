@@ -1,0 +1,2 @@
+# CareerPilot-AI---Your-Go-to-AI-Powered-Placement-Platform
+Hii Everyone! This is my Second Full Stack Project called CareerPilot AI Which I Made Using MERN Stack, CareerPilot AI is a Platform Where Students Can Get Ready For Placements through Following Modern &amp; Updated Roadmaps ,learning new Skills, Building Resumes, Practicing Mock Interviews etc Inorder to Become Placement Ready for any role
