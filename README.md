@@ -223,8 +223,8 @@ Full Stack Developer | B.Sc. Information Technology Student
 
 Passionate about building full-stack web applications, exploring emerging technologies, and developing solutions that solve real-world problems.
 
-- GitHub: [Your GitHub Profile](YOUR_GITHUB_PROFILE_URL)
-- LinkedIn: [Your LinkedIn Profile](YOUR_LINKEDIN_PROFILE_URL)
+- GitHub: https://github.com/Ram050106
+- LinkedIn: https://www.linkedin.com/in/ramaddagatla/
 
 ---
 
